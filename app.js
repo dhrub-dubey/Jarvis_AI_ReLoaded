@@ -47,6 +47,8 @@ btn.addEventListener('click', () => {
 function takeCommand(message) {
     if (message.includes('hey') || message.includes('hello')) {
         speak("Hello Sir, How May I Help You?");
+    } else if (message.includes("who made you") || message.includes("who created you") || message.includes("who coded you")) {
+        speak("I was made by Watson. He created me in an attempt to making his first completely indigenous homegrown AI Bot");
     } else if (message.includes("open google")) {
         window.open("https://google.com", "_blank");
         speak("Opening Google...");
