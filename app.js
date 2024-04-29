@@ -24,7 +24,10 @@ function wishMe() {
     }
 }
 
-window.addEventListener("load", loadWindow());
+window.addEventListener('load', () => {
+    speak("Initializing JARVIS...");
+    wishMe();
+});
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
@@ -40,11 +43,6 @@ btn.addEventListener('click', () => {
     content.textContent = "Listening...";
     recognition.start();
 });
-
-function loadWindow() {
-    speak("Initializing JARVIS...");
-    wishMe();
-}
 
 function takeCommand(message) {
     if (message.includes('hey') || message.includes('hello')) {
